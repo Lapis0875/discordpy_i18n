@@ -1,0 +1,31 @@
+[commands]
+    [commands.hello]
+    name="hello"
+    aliases=["hi", "greeting"]
+    [commands.user]
+    name="user"
+    aliases=["player"]
+    description="user command group"
+        [commands.user.info]
+        name="info"
+        aliases=["data"]
+        description="get user`s data"
+
+        [commands.user.search]
+        name="search"
+        aliases=["query", "find"]
+        description="search for user"
+
+[texts]
+    [texts.hello]   # namespace is seperated between commands and texts
+    value="Hello!"
+    [texts.user]
+        [texts.user.info]
+        value="User`s info : name={name}, tag={tag}, joined_at: {joined_at}"
+        [texts.user.name]
+        value="User`s name : name={name}"
+        [texts.user.notfound]
+        value="Cannot find user with given info!"
+    [texts.search]      # consider making textgroup
+        [texts.search.noresult]
+        value="Search result is empty"
